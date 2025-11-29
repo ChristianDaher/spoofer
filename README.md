@@ -3,43 +3,59 @@
 Network control tool for your local network. Scan devices, monitor bandwidth, block or throttle connections.
 
 Built with Python (FastAPI, Scapy) and Next.js.
+# Spoofer
 
-## Setup
+Lightweight network testing tool (proof-of-concept). Scan devices on a LAN, monitor per-device bandwidth, and optionally block or throttle traffic using iptables/tc.
 
-**Backend:**
+Built with Python (FastAPI, Scapy) for the backend and Next.js for the dashboard.
+
+## Screenshot
+
+![Screenshot](docs/main.png)
+
+## Quickstart
+
+Backend (recommended: use the included virtualenv):
+
 ```bash
 cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+python3 -m venv venv        # if you don't have the venv
+./venv/bin/pip install -r requirements.txt
+# Run (use sudo for features that require root: raw sockets, iptables, tc)
+sudo ./venv/bin/python3 api.py
 ```
 
-**Frontend:**
+Or use the helper script:
+
+```bash
+cd backend
+sudo ./run_backend.sh
+```
+
+Frontend:
+
 ```bash
 cd frontend
 npm install
-```
-
-## Running
-
-```bash
-# Backend (needs root for raw sockets)
-cd backend
-sudo $(which python) api.py
-
-# Frontend
-cd frontend
 npm run dev
+# Open http://localhost:3000
 ```
 
-Go to http://localhost:3000
+## Notes & safety
 
-## How it works
-
-Uses ARP spoofing to intercept traffic between devices and the router. Once in the middle, you can monitor bandwidth or use iptables/tc to block or limit connections.
-
-Only works on local networks. Requires Linux.
+- Only run ARP spoofing and traffic-control features on networks you own or are explicitly permitted to test.
+- Full functionality requires Linux and root privileges for packet/iptables operations.
 
 ## API
 
-Docs available at http://localhost:8000/docs when backend is running.
+API docs are available when the backend is running at `http://localhost:8000/docs`.
+
+## Screenshots
+
+The repository includes `docs/main.png`. Replace it with a real screenshot if you prefer:
+
+```text
+docs/main.png
+```
+
+If you want SVG placeholders, keep `docs/screenshot.svg` or replace it with your own image.
