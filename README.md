@@ -1,13 +1,3 @@
-# netcut
-
-Network control tool for your local network. Scan devices, monitor bandwidth, block or throttle connections.
-
-Built with Python (FastAPI, Scapy) and Next.js.
-# Spoofer
-
-Lightweight network testing tool (proof-of-concept). Scan devices on a LAN, monitor per-device bandwidth, and optionally block or throttle traffic using iptables/tc.
-
-Built with Python (FastAPI, Scapy) for the backend and Next.js for the dashboard.
 # Spoofer
 
 Lightweight network testing tool (proof-of-concept). Scan devices on a LAN, monitor per-device bandwidth, and optionally block or throttle traffic using `iptables`/`tc`.
@@ -54,9 +44,3 @@ npm run dev
 ## API
 
 API docs are available when the backend is running at `http://localhost:8000/docs`.
-
-## Screenshots
-
-The repository includes `docs/main.png`. Replace it with a real screenshot if you prefer.
-
-If you want an SVG placeholder, `docs/screenshot.svg` is included.
